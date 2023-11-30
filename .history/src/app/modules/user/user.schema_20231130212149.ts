@@ -1,0 +1,25 @@
+import { Schema, model, connect } from 'mongoose';
+import User from './user.interface';
+
+
+const userSchema = new Schema<User>(
+    {
+        userId: { type: Number, unique: true },
+        username: { type: String, required: true, unique: true },
+        password: { type: String, required: true },
+        fullName: {
+            firstName: {typString},
+            lastName:String,
+        },
+        age: { type: Number },
+        email: { type: String },
+        isActive: { type: Boolean },
+        hobbies: [{ type: String }],
+        address: {
+            street: { type: String },
+            city: { type: String },
+            country:{type:String}
+        }
+        
+    }
+)
